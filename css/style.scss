@@ -14,26 +14,6 @@ $primary-font: 'Open Sans', sans-serif;
 
 // mixins - rem fallback - credits: http://zerosixthree.se/
 
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
-}
-
-@mixin font-size($size) {
-  font-size: $size;
-  font-size: calculateRem($size);
-}
-
-// mixins - border radius
-
-@mixin border-radius($radius:.25em) {
-  border-radius: $radius;
-}
-
-// layout - breakpoints
-
-$L:     1170px;
-
 // layout - media queries
 
 /* --------------------------------

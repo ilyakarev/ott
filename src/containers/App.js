@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import Filter from '../components/Filter'
 import ListItems from '../components/ListItems'
 import * as ItemsActions from '../actions'
-import '../style.css'
-import '../font-awesome.min.css';
+import '../../css/style.css'
+import '../../css/font-awesome.min.css';
 
 
 const App = ({items, actions, filter}) => (
