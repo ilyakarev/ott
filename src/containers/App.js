@@ -7,7 +7,6 @@ import * as ItemsActions from '../actions'
 import '../../css/style.css'
 import '../../css/font-awesome.min.css';
 
-
 const App = ({items, actions, filter}) => (
     <div className="container">
         <Filter items={items} actions={actions} />
