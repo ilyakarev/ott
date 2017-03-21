@@ -19,7 +19,6 @@ export default function items(state = InitialState, action) {
                 ...state,
                 fetching:true
             };
-            break;
 
         case FETCH_FLIGHTS_FULFILLED:
             return {
@@ -28,7 +27,6 @@ export default function items(state = InitialState, action) {
                 fetched: true,
                 fetching: false
             };
-            break;
 
         case FETCH_FLIGHTS_REJECTED:
             return {
@@ -37,7 +35,6 @@ export default function items(state = InitialState, action) {
                 fetched: false,
                 error: action.payload.data
             };
-            break;
 
         case SHOW_ALL:
             return {
