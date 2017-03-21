@@ -1,0 +1,149 @@
+$main-text: #7f8c97; // main text
+$link: #acb7c0; // anchor tags
+$background: #e9f0f5; // body background color
+
+$color-1: #303e49; // blue dark
+$color-2: #c03b44; // red
+$color-3: #ffffff; // white
+$color-4: #75ce66; // green
+$color-5: #f0ca45; // yellow
+
+// variables - fonts
+
+$primary-font: 'Open Sans', sans-serif;
+
+// mixins - rem fallback - credits: http://zerosixthree.se/
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// mixins - border radius
+
+@mixin border-radius($radius:.25em) {
+  border-radius: $radius;
+}
+
+// layout - breakpoints
+
+$L:     1170px;
+
+// layout - media queries
+
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  font: {
+    size: 100%;
+    family: $primary-font;
+  }
+  color: $main-text;
+  background-color: $background;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+  font-family: $primary-font;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2 {
+  font-family: $primary-font;
+  font-weight: bold;
+}
+
+.container{
+  width: 1170px;
+  margin: 0 auto;
+  display: block;
+  .filter{
+    margin-bottom: 40px;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .list--flights{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    .item--flight{
+      font-size: 16px;
+      width: 48%;
+      padding: 1em;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05) ;
+      margin:{
+        right:1%;
+        left:1%;
+        bottom: 20px;
+      };
+      &>div{
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        dl{
+          width: 100%;
+          dd,dt{
+            width: 50%;
+            float: left;
+            margin-left: 0;
+          }
+        }
+      }
+      .direction{
+        &>div{
+          width: 50%;
+          float: left;
+          i{
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 18px;
+            border:2px solid rgba(black,.4);
+            border-radius: 50%;
+            margin-right: 3px;
+            text-align: center;
+            line-height: 28px;
+            +span{
+              vertical-align: middle;
+              color: $color-1;
+            }
+          }
+        }
+        .to{
+          i{
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+}
