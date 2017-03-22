@@ -15,10 +15,12 @@ export default class Item extends Component {
                 <div className="direction">
                     <div className="from">
                         <i className="fa fa-plane"></i>
-                        <span>{item.direction.from}</span></div>
+                        <span>{item.direction.from}</span>
+                    </div>
                     <div className="to">
                         <i className="fa fa-plane"></i>
-                        <span>{item.direction.to}</span></div>
+                        <span>{item.direction.to}</span>
+                    </div>
                 </div>
                 <div className="when">
                     <dl>
