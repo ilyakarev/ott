@@ -5,10 +5,12 @@ import 'react-select/dist/react-select.css';
 export default class Filter extends Component {
     static propTypes = {
         items: PropTypes.array.isRequired,
-        actions: PropTypes.object.isRequired
+        setFlights: PropTypes.func.isRequired,
+        showAll: PropTypes.func.isRequired
     };
-    setChange(val) {
-        const {setFlights, showAll} = this.props.actions;
+    setChange = (val) => {
+        const setFlights = this.props.setFlights;
+        const showAll = this.props.showAll;
         if(val!==null){
             if(val.value === 'Все'){
                 showAll();
@@ -20,7 +22,7 @@ export default class Filter extends Component {
             showAll();
             this.setState({value: 'Все'});
         }
-    }
+    };
 
     state = {value: 'Все'};
 
@@ -43,7 +45,7 @@ export default class Filter extends Component {
                     name="form-field-name"
                     value={value}
                     options={options}
-                    onChange={this.setChange.bind(this)}
+                    onChange={this.setChange}
                 />
             </div>
         )

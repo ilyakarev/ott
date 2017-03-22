@@ -9,7 +9,7 @@ import '../../css/font-awesome.min.css';
 
 const App = ({items, actions, filter}) => (
     <div className="container">
-        <Filter items={items} actions={actions} />
+        <Filter items={items} {...actions} />
         <ListItems items={items} filterName={filter}/>
     </div>
 );
